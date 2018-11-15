@@ -1,0 +1,246 @@
+/* =============================================================================
+  RESET, BOX SIZING, & CLEARFIX
+============================================================================= */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, small, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.param {
+  font-size: 130%;
+}
+
+.titel {
+  font-size: 200%;
+}
+
+/* =============================================================================
+  BASE
+============================================================================= */
+body,
+html {
+  height: 100%;
+}
+
+body {
+  color:            #909090;
+  background-color: #d8d3a9;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* =============================================================================
+  LAYOUT
+============================================================================= */
+
+
+/* container */
+.container {
+  margin: 10px auto;
+  width: 100%;
+  max-width: 1024px;
+}
+ 
+.qzc__answerarea {
+  margin: 10px;
+  position: relative;
+}
+
+.qzc__answer {
+  margin: 10px;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  color: #fff;
+  font-size: 130%;
+  appearance: none;
+  background: #909090; 
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+  cursor: pointer;
+  width: 95%;
+}
+/**
+ * Game buttons
+ *
+ * A simple helper class for game buttons. Edit at your will.
+ */
+.qzc__button {
+  margin: 10px;
+  display: inline-block;
+  padding: 5px;
+  color: #fff;
+  font-size: 130%;
+  appearance: none;
+  background: #3c50ff;
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+  cursor: pointer;
+}    
+
+.qzc__yes {  
+  background: #3cff50 ;
+}
+
+.qzc__no {
+  background: #ff3c50 ;
+}
+
+.qzc__buttonpressed {
+  background: #888888;
+}
+
+#qzi__finalarea {
+  display:none;   
+  margin-left: 10px;  
+  margin-right: 10px;
+  padding: 5px 5px 5px 5px important;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding right: 5px;
+}
+
+.qzc__descarea {
+  margin: 10px;
+  padding: 5px 5px 5px 5px important;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding right: 5px;
+}
+
+.qzc__titlearea {
+  margin:10px;
+  float: initial;
+}
+
+.qzc__desc {
+  padding: 5px 5px 5px 5px important;
+  margin: 10px;
+}
+
+.qzc__questionarea {
+  margin: 10px;
+  font-size: 130%;
+}
+
+.qzc__failarea {
+  display: none;
+}
+
+.qzc__scorearea {
+  padding-right: 20px;
+  float: right;
+}
+
+#qzi_title {
+  font-size: 150%;
+}
+
+.printheader {
+  display: none;  
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.invisible {
+  display: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9);
+}  
+
+#msgarea.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7);
+  color: rgb(255,255,255);
+  text-align: center;  
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}  
+
+img#qzi__editimage {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}
+
+div.qzc__image{ 
+  margin-left:  auto;
+  margin-right: auto;
+  float:  unset;
+  padding:20px;
+  width: 300px;
+  height: 300px;
+}
+
+div.qzc__image.loading {
+    background: url(quiz-loader.gif) no-repeat center center;
+}
+
+
+#loginarea{
+  padding: 20px;
+}
+
+
+@media print {
+  .printheader {
+    display: block;
+  }
+  
+  body {
+    margin: 10;
+  }
+  
+  .noprint {
+    display: none;
+  }
+}

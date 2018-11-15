@@ -1,0 +1,12 @@
+'tagpic' soll zum 'taggen' von Bildern benutzt werden.
+
+Besteht aus: einer Internet-Seite, die das Hochladen einer Datei 
+zusammen mit mehreren Feldern erlaubt. Ergebnis ist ein Dateidownload
+einer veränderten Datei.
+
+Funktion:
+- Datei hochladen (nur Bilddateien)
+- Name des Copyrightinhabers lesen
+- Dateiname, Copyrightinhaber, CC BY-SA oder BY-NC-SA hinzufügen
+- neue Datei zum Upload bereitstellen
+- Dateien löschen.

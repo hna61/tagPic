@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>  
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- aussehen -->
+  <link id="tp__favicon" rel="shortcut icon" type="image/png" href="css/tp-icon.png">
+  <link rel="stylesheet" href="css/tagpic.css">
+  
+
+ <!-- js -->  
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/tagpic.js"></script>
+  
+
+  
+</head>
+<body>
+
+	<noscript><div class='noindex'>
+  Möglicherweise versuchen Sie, mit einem gesicherten Browser auf 
+  diese Website zuzugreifen. Das wird nichts. Hier ist JavaScript
+  erforderlich. Aktivieren Sie bitte Skripts im Browser und 
+  laden diese Seite dann erneut.</div></noscript>
+
+<div id="container" class="container">
+  <div id="logoarea" class="invisible loading"></div>
+  
+  <div id="noscriptarea"  class="area">
+    <h1>Kein Spiel</h1>
+    <noscript><p>Ihr Browser beherrscht kein Javascript oder Sie haben es deaktiviert.</p>
+    <p>Dieses Spiel basiert auf Javascript. Rufen sie die Seite bitte in einer Umgebung auf, in der JavaScript lauffähig ist.</p>
+    </noscript>
+    <p id='qzi__nogame' style='visible: none;'>Noch ist kein Spiel geladen. Das kann daran liegen, dass der Server, der die Fragen bereitstellt, 
+    überlastet ist oder dass es das gewünschte Quiz nicht gibt.
+    </p>
+  </div>
+  
+  <div id="uploadarea" class="invisible area">  
+    <div class='titlearea'> 
+    <h1 id='title'>Tag an Image</h1>
+    </div>
+    <div id='tp_failarea' class='tp_failarea'>
+      <div id='tp_result' class='tp_result'>FALSCH - Bitte noch einmal versuchen ...</div>
+    </div>
+    <div id='qzi__descarea' class='qzc__descarea'>
+      <div id='qzi__result' class='qzc__result'>RICHTIG!</div>
+      <div id='qzi__desc' class='qzc__desc'></div>
+      <div  class='qzc__link'><a href='' id='qzi__link' target='_blank'>weitere Informationen ...</a></div>
+      <div id='qzi__weiter' class='qzc__button' >WEITER</div>
+      <div id='qzi__verbessern' class='qzc__button' title='Verbesserungsidee per Mail schicken' >Verbesserungsvorschlag</div>
+    </div>
+    <div id='qzi__finalarea' class='qzc__finalarea'>
+      <div id='qzi__finalstate' class='qzc__desc'>Spiel l&auml;uft</div>
+      <div id='qzi__nochmal' class='qzc__button' title='das Quiz zurücksetzen und erneut spielen' >Nochmal</div>
+      <div id='qzi__print' class='qzc__button invisible' >Drucken</div>
+      <div id='qzi__mail' class='qzc__button' >Prahlen per Mail</div>
+      <div id='qzi__whatsapp' class='qzc__button' >Prahlen per Whatsapp</div>  
+      <div id='qzi__edit' class='qzc__button invisible' title='das Quiz bearbeiten' >Quiz bearbeiten</div>
+      <div id='qzi__neufragesenden' class='qzc__button' title='einen Fragenvorschlag per E-Mail senden' >Neue Frage einsenden</div>
+    </div>
+  </div>
+  
+  <div id="imgarea" class="modal">
+    <img id="qzi__editimage" src="" title="Bild" alt="Bild"/>
+    <div id="qzi__closeimg" class="qzc__button" >schließen</div>
+  </div>
+  
+  <div id="msgarea" class="modal">
+    <h1 id="qzi__msgtitle" class="titel"></h1>
+    <p id="qzi__msgtext"></p>
+    <div id="qzi__closemsg" class="qzc__button" >schließen</div>
+  </div>
+  
+  <div id="versionarea" class="modal">
+    <h1 id="qzi__versiontitle" class="titel">Verfügbare Versionen</h1>
+    <div id="qzi__versionlist"></div>
+    <div id="qzi__closeversions" class="qzc__button" >schließen</div>
+  </div>
+  
+  <div id="editarea" class="invisible area">
+    <div class='qzc__titlearea'>
+      <table>
+      <tr><th>Titel: </th><td> <input id='edit_title'  size='50'/></td></tr>
+      <tr><th>E-Mail des Verantwortlichen:</th><td colspan="2"> <input id='edit_email'  size='50'/></td></tr>
+      <tr><th>erlaubte Bearbeiter: </th><td colspan="2"> <input id='edit_users'  size='50'/></td></tr>
+      <tr><th>Fragen pro Runde: </th><td colspan="2"> <input id='edit_colcount'  size='50'/></td></tr>
+      <tr><th>Hintergrundfarbe: </th><td > <input id='edit_bgcolor'  size='50'/></td><td rowspan="2"> <div id="qzi__showcolors" class="qzc__button" title="Farben anzeigen">Farben anzeigen</div></td></tr>
+      <tr><th>Vordergrundfarbe: </th><td> <input id='edit_fgcolor'  size='50'/></td>   </tr>
+      <tr><th>Logo-Url: </th><td> <input id='edit_logo'  size='50'/></td><td><div id="qzi__showlogo" class="qzc__button" title="Bild anzeigen">anzeigen</div></td></tr>
+      <tr><th></th><td><input type="file" id="edit_logoFile" /> </td><td>
+      <div id='qzi__uploadlogo' class='qzc__button' title='Bilddatei hochladen' >Upload</div></td></tr>
+      </table>
+    </div> 
+    
+    <table>
+      <tr><th><div id='qzi__editimage' class='qzc__question'>Bilddatei: </div></th><td><input id='edit_image' size='50'/></td>
+        <td><div id="qzi__showimg" class="qzc__button" title="Bild anzeigen">anzeigen</div></td></tr>
+      <tr><td></td><td> <input type="file" id="edit_imageFile" /></td>
+        <td><div id='qzi__upload' class='qzc__button' title='Bilddatei hochladen' >Upload</div></td></tr>
+ 
+    <tr><th>Urheber: </th><td><input id='edit_antwort1' size='50'/></td></tr>
+    
+    
+    <tr><th>Erl&auml;uterung: </th><td><textarea id='edit_erlaeuterung'  rows='5' cols='50'></textarea></td></tr>
+    <tr><th>Info-URL: </th><td><input id='edit_link' size='50'/></td></tr>
+    </table>
+    
+    <div class='qzc__buttonarea'>
+    <div class='qzc__back qzc__button' title='die vorhergehende Frage anzeigen und bearbeiten'>vorige Frage</div>
+    <div class='qzc__next qzc__button' title='die nächste Frage anzeigen und bearbeiten' >n&auml;chste Frage</div>
+    <div class='qzc__neu qzc__button' title='eine neue Frage anlegen und bearbeiten' >neue Frage</div>
+    <div id='qzi__weg' class='qzc__button' title='die angezeigte Frage löschen und die nächste bearbeiten' >Frage l&ouml;schen</div>
+    <div id='qzi__save' class='qzc__button' title='den aktuellen Stand des Quiz speichern' >Speichern</div>
+    <div id='qzi__listrestore' class='qzc__button' title='einen alten Stand des Quiz laden' >Alte Version laden</div>
+    <div id='qzi__play' class='qzc__button' title='das Quiz spielen (ist der Stand schon gespeichert?)' >Spielen</div>
+    </div>
+  </div>
+  
+</div>
+</body>
+</html>
